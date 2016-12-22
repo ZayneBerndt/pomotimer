@@ -9,7 +9,7 @@
          $stateProvider
          .state('index', {
              url: '/',
-             templateUrl: '/templates/index.html'
+             templateUrl: '/pages/index.html'
          })
          .state('worktimer', {
              url: '/worktimer',
