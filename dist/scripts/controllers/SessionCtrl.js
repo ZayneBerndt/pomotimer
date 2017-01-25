@@ -4,11 +4,11 @@
  
   $scope.breakLength = 2;
   $scope.sessionLength = 0.1;
-  $scope.sessionType = 'Session';
+  $scope.sessionType = 'Work';
   $scope.timeLeft = $scope.sessionLength;
   $scope.fillHeight = '0%';
 
-  var timerRunning = false;
+  var timerRunning = false 
   var secs = 60 * $scope.timeLeft;
   $scope.originalTime = $scope.sessionLength;
 
@@ -25,7 +25,7 @@
 
   $scope.timerStartStop = function() {
     if (!timerRunning) {
-      if ($scope.currentName === 'Session') {
+      if ($scope.currentName === 'Work') {
         $scope.currentLength = $scope.sessionLength;
       } else {
         $scope.currentLength = $scope.breakLength;
@@ -48,7 +48,7 @@
 
       $scope.fillColor = '#333';
       if ($scope.sessionType === 'Break!') {
-        $scope.sessionType = 'Session';
+        $scope.sessionType = 'Work';
         $scope.currentLength = $scope.sessionLength;
         $scope.timeLeft = 60 * $scope.sessionLength;
         $scope.originalTime = $scope.sessionLength;

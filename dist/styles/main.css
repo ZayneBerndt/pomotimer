@@ -20,6 +20,10 @@ h2 {
   font-size: 3em;
 }
 
+.tasks {
+    font-size: 10px;
+}
+
 p {
     position: relative;
     font-size: 1em;
@@ -70,3 +74,34 @@ span {
   text-align: center;
   line-height: 180px;
 }
+
+.wrapper {
+    position: absolute;
+    float: right;
+    text-align: center;
+    width:66.7%;
+    height: 400px;
+    height:100vh;
+    top:100px;
+   
+
+}
+
+.column {
+       float: left;
+/*
+        padding-left: 1rem;
+        padding-right: 1rem;
+*/
+    }
+    
+    .column.full { width: 100% }
+    .column.two-thirds { width: 66.7%;
+    height: 100vh;}
+    .column.half { width: 50%; 
+    }
+    .column.third { width: 33.3%; 
+    background-color: #D3D3D3;
+    height:100vh;}
+    .column.fourth { width: 25%; }
+    .column.flow-opposite { float: right; }

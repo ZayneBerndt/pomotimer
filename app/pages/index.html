@@ -11,11 +11,12 @@
 </head>
 <body>
 
-    <ui-view></ui-view>
-    
-    
+   
+   <section class="column two-thirds"> 
+       <div class="wrapper" >
     <h2>PomoTimer</h2>
-<main ng-app="pomotimer" ng-controller="SessionCtrl">
+    
+<main ng-app="pomotimer" ng-controller="SessionCtrl" "TasksCtrl",
   
   <section ng-click="timerStartStop()">
     <div class="timer">
@@ -23,9 +24,20 @@
       <p>{{timeLeft}}</p>
       <span ng-style="{'height':fillHeight, 'background':fillColor }" class="fill"></span>
     </div>
+           </div>
   </section>
-</main>
     
+
+    
+<section class="column third">
+    <h6 style="font-size:12px; padding:5px">Tasks</h6>
+    
+
+  <p style="padding:5px"><input type="text" name="add-task" class='add task' placeholder="Add your task here" ng-model="data.taskName"  ng-keyup="addTask()"/></p>
+<h1 style="font-size:12px; padding:5px">List of tasks: {{ data.taskName }}</h1>
+ 
+  </section>  
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     

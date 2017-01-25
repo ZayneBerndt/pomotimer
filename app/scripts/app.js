@@ -21,5 +21,6 @@
 
 angular
          .module('pomotimer', ['ui.router'])
+         .module('pomotimer', ['firebase'])
          .config(config);
  })();
