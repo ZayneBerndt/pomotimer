@@ -39,7 +39,7 @@
         </form>
 
 <ul>
-    <li ng-repeat="task in tasks" class="{'fadeOut' : task.done}">
+    <li ng-repeat="task in tasks | orderBy:'reverse':true" class="{'fadeOut' : task.done}">
         <span class="fa-close" ng-click="deleteTask($index)"></span>
         <span>{{task.title}}</span>
     </li>

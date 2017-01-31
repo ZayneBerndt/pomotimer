@@ -39,7 +39,7 @@
         </form>
 
 <ul>
-    <li ng-repeat="task in tasks" class="{'fadeOut' : task.done}">
+    <li ng-repeat="task in tasks | orderBy:'reverse':true" class="{'fadeOut' : task.done}">
         <span class="fa-close" ng-click="deleteTask($index)"></span>
         <span>{{task.title}}</span>
     </li>
@@ -47,7 +47,18 @@
 
 </section>  
 
-
+<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+<script>
+// Initialize Firebase
+var config = {
+apiKey: "AIzaSyBwFuMiinTtm66dRnmN-yGArXMnw_DoPDg",
+authDomain: "pomotimer-d531d.firebaseapp.com",
+databaseURL: "https://pomotimer-d531d.firebaseio.com",
+storageBucket: "pomotimer-d531d.appspot.com",
+messagingSenderId: "883033865902"
+};
+firebase.initializeApp(config);
+</script>
     
 <!-- AngularJS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
