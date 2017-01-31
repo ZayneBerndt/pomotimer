@@ -1,0 +1,73 @@
+
+
+
+
+
+* {
+  font-size: 14px;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+}
+
+h1 {
+    top:0px;
+    font-size: 3rem;
+    padding: 20px;
+    color:white;
+}
+
+input {
+ 
+  border: 0;
+  margin-right: 5px;
+  background: transparent;
+  border-bottom: 1px solid lightgrey;
+  width: 80px;
+  padding-top: 8px;
+  @include transition(all .3s ease);
+  
+  &:focus, &:active {
+    outline: 0;
+    width: 200px;
+    border-bottom-color: $melon;
+  }
+}
+
+button {
+  background-color: lightgrey;
+  border: 1px;
+  padding: 8px 20px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  &:focus, &:active {
+    outline: 0;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 25px;
+}
+
+li {
+  border: 2px solid lightgrey;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.fa-close {
+  cursor: pointer;
+}
+
+[contenteditable] {
+  &:focus, &:active {
+    outline:0;
+  }
+}

@@ -7,22 +7,23 @@ body {
 }
 
 button {
-  background-color: #333;
+  background-color:;
   border: none;
-  font-size: 1.5em;
+  font-size: 1.2rem;
   border: none;
   cursor: pointer;
   outline: none;
 }
 
 h2 {
-  margin: auto;
-  font-size: 3em;
+    position: relative;
+    margin: auto;
+    font-size: 3em;
+    padding: 10px;
+    top:30px;
 }
 
-.tasks {
-    font-size: 10px;
-}
+
 
 p {
     position: relative;
@@ -46,12 +47,14 @@ span {
  }
 
 .timer {
+    top:30px;
+    padding: 20px;
   margin: 0 auto;
   text-align: center;
   width: 300px;
   height: 300px;
   font-size: 1.5em;
-  border: 3px solid black;
+  border: 3px solid lightgrey;
   border-radius: 50%;
   cursor: pointer;
   position: relative;
@@ -87,6 +90,8 @@ span {
 
 }
 
+
+
 .column {
        float: left;
 /*
@@ -97,11 +102,13 @@ span {
     
     .column.full { width: 100% }
     .column.two-thirds { width: 66.7%;
-    height: 100vh;}
+    height: 100vh;
+        float: right;
+     background-color:#374131;}
     .column.half { width: 50%; 
     }
     .column.third { width: 33.3%; 
-    background-color: #D3D3D3;
+    background-color: #3b3141;
     height:100vh;}
     .column.fourth { width: 25%; }
-    .column.flow-opposite { float: right; }
+    .column.flow-opposite { float: right;}

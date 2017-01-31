@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html ng-app="pomotimer">
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>Pomotimer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
-    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+<meta charset="UTF-8">
+<title>Pomotimer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
+<link rel="stylesheet" type="text/css" href="/styles/normalize.css">
+<link rel="stylesheet" type="text/css" href="/styles/main.css">
+<link rel="stylesheet" type="text/css" href="styles/tasks.css">
 </head>
 <body>
-
-   
-   <section class="column two-thirds"> 
-       <div class="wrapper" >
+    
+<main ng-app="pomotimer" ng-controller= "SessionCtrl"  >
+<section class="column two-thirds"> 
     <h2>PomoTimer</h2>
-    
-<main ng-app="pomotimer" ng-controller="SessionCtrl" "TasksCtrl",
-  
-  <section ng-click="timerStartStop()">
+    <div class="wrapper" >
+<section ng-click="timerStartStop()">
     <div class="timer">
-      <p class="title">{{sessionType}}</p>
-      <p>{{timeLeft}}</p>
-      <span ng-style="{'height':fillHeight, 'background':fillColor }" class="fill"></span>
+        <p class="title">{{sessionType}}</p>
+        <p>{{timeLeft}}</p>
+        <span ng-style="{'height':fillHeight, 'background':fillColor }" class="fill"></span>
     </div>
-           </div>
-  </section>
-    
+   </div>
+</section>
+</main>  
 
-    
-<section class="column third">
-    <h6 style="font-size:12px; padding:5px">Tasks</h6>
-    
-
-  <p style="padding:5px"><input type="text" name="add-task" class='add task' placeholder="Add your task here" ng-model="data.taskName"  ng-keyup="addTask()"/></p>
-<h1 style="font-size:12px; padding:5px">List of tasks: {{ data.taskName }}</h1>
  
-  </section>  
+<section class="column third">
+    <main ng-app="pomotimer" ng-controller= "TasksCtrl"  >
+
+        <h1>AddYourTasks</h1>
+
+        <form name="tasksFrm" ng-submit="addTask()">
+            <input type="text" name="newTask" ng-model="newTask" required />
+            <button ng-click="addTask()">Add</button>
+            <p>{{task.title}} </p>
+        </form>
+
+<ul>
+    <li ng-repeat="task in tasks" class="{'fadeOut' : task.done}">
+        <span class="fa-close" ng-click="deleteTask($index)"></span>
+        <span>{{task.title}}</span>
+    </li>
+</ul>
+
+</section>  
+
 
     
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-    <script src="/scripts/app.js"></script>
-    <script src="/scripts/controllers/SessionCtrl.js"></script>
-    
-    
-    
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+<!-- UI ROUTER -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+ <!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+
+<script src="/scripts/app.js"></script>
+<script src="/scripts/controllers/SessionCtrl.js"></script>
+<script src="/scripts/controllers/TasksCtrl.js"></script>
+
+
 </body>
 </html>

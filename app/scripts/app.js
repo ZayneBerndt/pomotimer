@@ -15,12 +15,19 @@
              url: '/worktimer',
              controller: 'SessionCtrl as session',
              templateUrl: '/templates/worktimer.html'
+         })
+         .state('tasks', {
+             url: '/tasks',
+             controller: 'TasksCtrl as tasks',
+             templateUrl: '/templates/tasks.html'
          });
+         
+         
+         ;
      }
 
 
 angular
-         .module('pomotimer', ['ui.router'])
-         .module('pomotimer', ['firebase'])
+         .module('pomotimer', ['ui.router', 'firebase'])
          .config(config);
  })();
